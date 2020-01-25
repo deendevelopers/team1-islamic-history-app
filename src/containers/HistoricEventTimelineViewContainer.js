@@ -20,7 +20,11 @@ function HistoricEventTimelineViewContainer(props) {
   useEffect(() => {
     historicEventsService.getAllForTimelineId(3)
         .then(data => {
-          setEvents(data);
+          const randomisedEvents = data.map(e => {
+            e.timelineLineHeight = Math.round(Math.random()*100);
+            return e;
+          });
+          setEvents(randomisedEvents);
         });
   }, [timelineId]);
 

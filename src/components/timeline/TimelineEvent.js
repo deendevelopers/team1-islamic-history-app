@@ -3,16 +3,23 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import TimelineClickableCircle from './TimelineClickableCircle';
 import {FlexColumnFullScreenView, FlexColumnView} from '../views/FlexView';
+import styled from 'styled-components';
+
+const View = styled.div`
+display: flex;
+flex-direction: column;
+
+`;
 
 function TimelineEvent(props) {
-  const{event, onEventClick} = {...props}
+  const{event, onEventClick} = {...props};
 
   return (
-      <FlexColumnFullScreenView>
-        <TimelineLine/>
+      <View>
+        <TimelineLine height={event.timelineLineHeight}/>
         <TimelineClickableCircle onClick={() => onEventClick(event)}/>
-        <TimelineLine/>
-      </FlexColumnFullScreenView>
+        <TimelineLine height={event.timelineLineHeight}/>
+      </View>
   )
 }
 

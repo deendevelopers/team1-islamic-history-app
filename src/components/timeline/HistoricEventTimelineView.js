@@ -10,7 +10,7 @@ import EventModal from '../EventModal';
 function HistoricEventTimelineView(props) {
   const {events} = {...props};
 
-  const [selectedEvent, setSelectedEvent] = useState(null)
+  const [selectedEvent, setSelectedEvent] = useState(null)   ;
 
   function onEventPointClicked(event) {
     setSelectedEvent(event);

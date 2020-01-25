@@ -9,6 +9,7 @@ border-style: solid;
 border-color: ${COLOR_TIMELINE_CIRCLE};
 border-width: 2px;
 border-radius: 50%;
+align-self: center;
 `;
 
 

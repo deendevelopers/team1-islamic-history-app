@@ -19,7 +19,7 @@ const ModalWrapper = styled.div`
 background-color: white;
 border-radius: 10px;
 border-color: ${FACT_COLOR};
-border-width: 2px;
+border-width: 1px;
 border-style: solid;
 opacity: 1;
 `;

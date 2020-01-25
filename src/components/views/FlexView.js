@@ -58,7 +58,7 @@ export function FlexColumnFullWidthView(props) {
 export function FlexColumnView(props) {
   return (
       <FlexView flexDirection="column" justifyContent="center"
-                alignItems={'center'}{...props}/>
+                alignItems={'center'} {...props}/>
   );
 }
 
