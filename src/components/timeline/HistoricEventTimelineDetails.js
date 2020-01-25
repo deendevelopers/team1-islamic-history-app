@@ -1,13 +1,13 @@
 import React from 'react';
-import TimelineEvent from './TimelineEvent';
 import {FlexRowFullScreenView} from '../views/FlexView';
+import * as PropTypes from 'prop-types'
 
 function HistoricEventTimelineDetails(props) {
   const {events} = {...props};
 
   return (
       <FlexRowFullScreenView>
-        Details here>
+        Details here
       </FlexRowFullScreenView>
   )
 }
