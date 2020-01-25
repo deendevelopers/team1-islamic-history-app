@@ -1,18 +1,19 @@
 import * as types from './actionTypes';
-import {FACT_VIEW, SPLASH_SCREEN} from '../../constants/navigation';
+import {
+  SINGLE_HISTORIC_EVENT_MAIN_VIEW,
+  TIMELINE_HISTORIC_EVENTS_VIEW,
+} from '../../constants/navigation';
 
 const INITIAL_STATE = {
-  page: FACT_VIEW,
+  // page: SINGLE_HISTORIC_EVENT_MAIN_VIEW,
+  page: TIMELINE_HISTORIC_EVENTS_VIEW,
 };
 
 const navigationReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case types.NAVIGATE_T0_LOGIN_SCREEN:
-    case types.NAVIGATE_T0_APP_SCREEN:
-    case types.NAVIGATE_T0_ACCOUNT_VIEW:
-    case types.NAVIGATE_T0_LIKES_VIEW:
-    case types.NAVIGATE_T0_CARD_VIEW:
-    case types.NAVIGATE_T0_VIRO_VIEW:
+    case types.NAVIGATE_TO_SINGLE_HISTORIC_EVENT_MAIN:
+    case types.NAVIGATE_TO_SINGLE_HISTORIC_EVENT_DETAIL:
+    case types.NAVIGATE_TO_TIMELINE_HISTORIC_EVENTS:
       return {page: action.page};
     default:
       return state;

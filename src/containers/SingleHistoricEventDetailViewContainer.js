@@ -13,8 +13,8 @@ import SingleHistoricEventScrollIndicator
 import SingleHistoricEventQuoteView
   from '../components/singlehistoricevent/SingleHistoricEventQuoteView';
 import ScrollableView from '../components/views/ScrollableView';
-import {connect} from 'react-redux';
-import {navigateToSingleHistoricEventDetail} from '../store/navigation/actions';
+import SingleHistoricEventDetailsView
+  from '../components/singlehistoricevent/SingleHistoricEventDetailsView';
 
 const FactViewWrapper = styled.div`
 display: flex;
@@ -23,8 +23,7 @@ flex: auto;
 align-items: center;
 `;
 
-function SingleHistoricEventViewContainer(props) {
-  const {navigateToSingleHistoricEventDetail} = {...props};
+function SingleHistoricEventViewContainer() {
   const [event, setEvent] = useState('');
 
   useEffect(() => {
@@ -32,23 +31,13 @@ function SingleHistoricEventViewContainer(props) {
         .then(data => setEvent(data));
   }, []);
 
-  function goToDetails() {
-    navigateToSingleHistoricEventDetail();
-  }
+  console.log(event);
 
   return (
       <FlexView flexDirection={'column'} height={'100%'}>
-        <SingleHistoricEventQuoteView event={event} onNextClick={goToDetails}/>
+        <SingleHistoricEventDetailsView/>
       </FlexView>
   );
 }
 
-const mapStateToProps = (state) => ({
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  navigateToSingleHistoricEventDetail: () => dispatch(navigateToSingleHistoricEventDetail())
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(SingleHistoricEventViewContainer);
+export default SingleHistoricEventViewContainer;

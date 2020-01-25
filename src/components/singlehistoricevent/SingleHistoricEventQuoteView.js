@@ -10,6 +10,7 @@ import SingleHistoricEventHeader from './SingleHistoricEventHeader';
 import SingleHistoricEventText from './SingleHistoricEventText';
 import SingleHistoricEventScrollIndicator
   from './SingleHistoricEventScrollIndicator';
+import SingleHistoricEventFooter from './SingleHistoricEventFooter';
 
 const FactViewWrapper = styled.div`
 display: flex;
@@ -17,7 +18,7 @@ flex-direction: column;
 flex: 1;
 align-items: center;
 `;
-FactViewWrapper.displayName = "FactViewWrapper";
+FactViewWrapper.displayName = 'FactViewWrapper';
 
 const FactViewInnerWrapper = styled.div`
 display: flex;
@@ -27,24 +28,24 @@ justify-content: center;
 height: 50%;
 align-items: stretch;
 `;
-FactViewInnerWrapper.displayName = "FactViewInnerWrapper";
+FactViewInnerWrapper.displayName = 'FactViewInnerWrapper';
 
 function SingleHistoricEventQuoteView(props) {
-  const {event} = {...props};
+  const {event, onNextClick} = {...props};
 
   return (
       <FactViewWrapper>
         <FactViewInnerWrapper>
-          <RcQueueAnim delay={700}>
-            <SingleHistoricEventHeader text={event.date} key={1}/>
-            <SingleHistoricEventText text={event.description} key={1}/>
-            <SingleHistoricEventHeader text={'-- ' + event.subject + ' --'}
-                                       key={2}/>
+          <RcQueueAnim delay={700} component={"div"}>
+              <SingleHistoricEventHeader text={event.date} key={1}/>
+              <SingleHistoricEventText text={event.description} key={2}/>
+              <SingleHistoricEventFooter text={'-- ' + event.subject + ' --'}
+                                         key={3}/>
           </RcQueueAnim>
         </FactViewInnerWrapper>
-        <SingleHistoricEventScrollIndicator/>
+        <SingleHistoricEventScrollIndicator onClick={onNextClick}/>
       </FactViewWrapper>
-  );
+);
 }
 
 export default SingleHistoricEventQuoteView;
