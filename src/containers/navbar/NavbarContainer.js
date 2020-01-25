@@ -4,25 +4,42 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCog, faUser} from '@fortawesome/free-solid-svg-icons';
 import FlexView from '../../components/views/FlexView';
 
-
-const Navbar = styled(FlexView).attrs()`
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-padding-left: 30px;
-padding-right: 30px;
-align-items: center;
+const Navbar = styled.nav`
 height: 50px;
+//min-height: 50px;
+background-color: #FFFFFF;
+position: relative;
+width: 100%;
+padding-top: 15px;
+padding-bottom: 10px;
+font-size: 20px;
+`;
+
+const AppIconWrapper = styled(FlexView)
+    .attrs({
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    })`
+color: #c2c2c2;
+width: 100%;
+padding-left: 10px;
+padding-right: 10px;
 `;
 
 function NavbarContainer() {
 
   return (
       <Navbar>
-        {/*<AppText>Settings</AppText>*/}
-        {/*<AppText>Account</AppText>*/}
-        <FontAwesomeIcon icon={faCog} size={25} />
-        <FontAwesomeIcon icon={faUser} size={25} />
+        <FlexView flexDirection={'row'} alignItems={'stretch'}
+                  justifyContent={'space-between'}>
+          {/*<AppText>Settings</AppText>*/}
+          {/*<AppText>Account</AppText>*/}
+          <AppIconWrapper>
+            <FontAwesomeIcon icon={faCog} size={'lg'}/>
+            <FontAwesomeIcon icon={faUser} size={'lg'}/>
+          </AppIconWrapper>
+        </FlexView>
       </Navbar>
   );
 }

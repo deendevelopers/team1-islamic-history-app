@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-import {Redirect, Route, Switch} from "react-router-dom";
-import FactViewContainer from './containers/fact/FactViewContainer';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import FlexView from './components/views/FlexView';
-import AppView from './components/views/AppView';
+import SingleHistoricEventViewContainer
+  from './containers/SingleHistoricEventViewContainer';
 
 export default class IslamicHistoryApp extends Component {
 
@@ -12,14 +12,12 @@ export default class IslamicHistoryApp extends Component {
 
   render() {
     return (
-        <AppView>
-          <FlexView flexDirection={"column"} height={"100%"} justifyContent={"flex-end"}>
-              <Switch>
-                <Route path={"/"} component={() => <FactViewContainer/>}/>
-                <Redirect exact from="/" to={"/"}/>
-              </Switch>
-          </FlexView>
-        </AppView>
+        <FlexView flexDirection={'column'} height={'100%'} justifyContent={'flex-end'}>
+          <Switch>
+            <Route path={'/'} component={() => <SingleHistoricEventViewContainer/>}/>
+            <Redirect exact from="/" to={'/'}/>
+          </Switch>
+        </FlexView>
     );
   }
 }
