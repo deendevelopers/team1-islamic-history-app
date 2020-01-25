@@ -17,10 +17,9 @@ const Header = styled.div`
 `;
 
 function SingleHistoricEventScrollIndicator(props) {
-  const {text} = {...props};
 
   return (
-      <FlexColumnFullWidthView>
+      <FlexColumnFullWidthView {...props}>
         <Header>
           Read More
           <TweenOne

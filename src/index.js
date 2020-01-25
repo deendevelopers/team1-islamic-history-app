@@ -4,6 +4,11 @@ import * as serviceWorker from './serviceWorker';
 import IslamicHistoryApp from './IslamicHistoryApp';
 import {Router} from 'react-router-dom';
 import {createBrowserHistory} from 'history';
+import rootReducer from './store/rootReducer';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+
+const store = createStore(rootReducer);
 
 // Router history
 const history = createBrowserHistory();
@@ -12,12 +17,13 @@ const history = createBrowserHistory();
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
+    <Provider store={store}>
       <Router history={history}>
         <IslamicHistoryApp/>
-      </Router>,
+      </Router>
+    </Provider>,
     rootElement,
 );
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
