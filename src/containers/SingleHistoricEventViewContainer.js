@@ -8,28 +8,24 @@ import SingleHistoricEventText
 import SingleHistoricEventHeader
   from '../components/singlehistoricevent/SingleHistoricEventHeader';
 import RcQueueAnim from 'rc-queue-anim';
+import SingleHistoricEventScrollIndicator
+  from '../components/singlehistoricevent/SingleHistoricEventScrollIndicator';
+import SingleHistoricEventQuoteView
+  from '../components/singlehistoricevent/SingleHistoricEventQuoteView';
+import ScrollableView from '../components/views/ScrollableView';
 
 const FactViewWrapper = styled.div`
 display: flex;
-flex-direction: row;
+flex-direction: column;
 flex: auto;
 align-items: center;
-`;
-
-const FactViewInnerWrapper = styled.div`
-display: flex;
-flex-direction: row;
-flex: auto;
-justify-content: center;
-height: 50%;
-align-items: stretch;
 `;
 
 function SingleHistoricEventViewContainer() {
   const [event, setEvent] = useState('');
 
   useEffect(() => {
-    historicEventsService.getOne(1)
+    historicEventsService.getOne(Math.round(Math.random() * 10))
         .then(data => setEvent(data));
   }, []);
 
@@ -38,16 +34,9 @@ function SingleHistoricEventViewContainer() {
   return (
       <FlexView flexDirection={'column'} height={'100%'}>
         {/*<NavbarContainer/>*/}
-        <FactViewWrapper>
-          <FactViewInnerWrapper>
-            <RcQueueAnim delay={700}>
-              <SingleHistoricEventHeader text={event.date} key={1}/>
-              <SingleHistoricEventText text={event.description} key={1}/>
-              <SingleHistoricEventHeader text={'-- ' + event.subject + ' --'}
-                                         key={2}/>
-            </RcQueueAnim>
-          </FactViewInnerWrapper>
-        </FactViewWrapper>
+          <ScrollableView>
+            <SingleHistoricEventQuoteView event={event}/>
+          </ScrollableView>
       </FlexView>
   );
 }
