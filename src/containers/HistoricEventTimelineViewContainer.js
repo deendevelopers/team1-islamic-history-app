@@ -2,8 +2,10 @@ import React, {useEffect, useState} from 'react';
 import FactText from '../components/FactText';
 import styled from 'styled-components';
 import NavbarContainer from './navbar/NavbarContainer';
-import FlexView from '../components/views/FlexView';
+import FlexView, {FlexColumnFullScreenView} from '../components/views/FlexView';
 import historicEventsService from '../services/HistoricEventsService';
+import HistoricEventTimelineView
+  from '../components/timeline/HistoricEventTimelineView';
 
 const FactViewWrapper = styled(FlexView)
     .attrs(
@@ -11,22 +13,22 @@ const FactViewWrapper = styled(FlexView)
 flex: 1;
 `;
 
-function TimelineViewContainer(props) {
+function HistoricEventTimelineViewContainer(props) {
   const {timelineId} = {...props};
-  const [timeline, setTimeline] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    historicEventsService.getAllForTimelineId(timelineId)
+    historicEventsService.getAllForTimelineId(3)
         .then(data => {
-          setTimeline(data);
+          setEvents(data);
         });
   }, [timelineId]);
 
   return (
-      <FlexView flexDirection={'column'} height={'100%'}>
-        <NavbarContainer/>
-      </FlexView>
+      <FlexColumnFullScreenView>
+        <HistoricEventTimelineView events={events}/>
+      </FlexColumnFullScreenView>
   );
 }
 
-export default TimelineViewContainer;
+export default HistoricEventTimelineViewContainer;

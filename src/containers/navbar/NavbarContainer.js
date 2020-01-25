@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCog, faUser} from '@fortawesome/free-solid-svg-icons';
+import {faCog, faStream, faUser} from '@fortawesome/free-solid-svg-icons';
 import FlexView from '../../components/views/FlexView';
+import {connect} from 'react-redux';
+import {
+  navigateToSingleHistoricEventDetail,
+  navigateToTimelineEvents,
+} from '../../store/navigation/actions';
 
 const Navbar = styled.nav`
 height: 50px;
@@ -27,7 +32,8 @@ padding-left: 10px;
 padding-right: 10px;
 `;
 
-function NavbarContainer() {
+function NavbarContainer(props) {
+  const {navigateToTimelineEvents} = {...props};
 
   return (
       <Navbar>
@@ -37,11 +43,19 @@ function NavbarContainer() {
           {/*<AppText>Account</AppText>*/}
           <AppIconWrapper>
             <FontAwesomeIcon icon={faCog} size={'lg'}/>
-            <FontAwesomeIcon icon={faUser} size={'lg'}/>
+            <FontAwesomeIcon icon={faStream} size={'lg'} onClick={navigateToTimelineEvents}/>
           </AppIconWrapper>
         </FlexView>
       </Navbar>
   );
 }
 
-export default NavbarContainer;
+const mapStateToProps = (state) => ({
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  navigateToTimelineEvents: () => dispatch(navigateToTimelineEvents())
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarContainer);

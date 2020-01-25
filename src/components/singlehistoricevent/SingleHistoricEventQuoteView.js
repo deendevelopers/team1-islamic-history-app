@@ -36,11 +36,11 @@ function SingleHistoricEventQuoteView(props) {
   return (
       <FactViewWrapper>
         <FactViewInnerWrapper>
-          <RcQueueAnim delay={700}>
+          <RcQueueAnim delay={700} component={"div"}>
               <SingleHistoricEventHeader text={event.date} key={1}/>
-              <SingleHistoricEventText text={event.description} key={1}/>
+              <SingleHistoricEventText text={event.description} key={2}/>
               <SingleHistoricEventFooter text={'-- ' + event.subject + ' --'}
-                                         key={2}/>
+                                         key={3}/>
           </RcQueueAnim>
         </FactViewInnerWrapper>
         <SingleHistoricEventScrollIndicator onClick={onNextClick}/>

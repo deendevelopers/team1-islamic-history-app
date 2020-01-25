@@ -2,10 +2,10 @@ import styled from "styled-components";
 import PropTypes from 'prop-types';
 
 const ScrollableView = styled.div`
-  overflow-y: ${props => props.horizontal ? "hidden" : "scroll"};
-  overflow-x: ${props => props.horizontal ? "scroll" : "hidden"};
+  overflow-y: ${props => props.x ? "scroll" : "hidden"};
+  overflow-x: ${props => props.y ? "scroll" : "hidden"};
   display: flex;
-  flex-direction: ${props => props.horizontal ? "row" : "column"};
+  flex-direction: ${props => props.flexDirection};
   height: 100%;
   width: 100%;
   scroll-behavior: smooth;
@@ -14,11 +14,9 @@ const ScrollableView = styled.div`
 `;
 
 ScrollableView.propTypes = {
-  horizontal: PropTypes.bool,
-};
-
-ScrollableView.defaulProps = {
-  horizontal: false,
+  flexDirection: PropTypes.string,
+  x: PropTypes.boolean,
+  y: PropTypes.boolean,
 };
 
 ScrollableView.displayName = "ScrollableView";
