@@ -1,0 +1,1 @@
+export const FACT_COLOR = "#d1cfce";

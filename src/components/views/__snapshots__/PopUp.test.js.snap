@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopUp renders correctly 1`] = `
+<div
+  className="PopUp__PopUpPanel-sc-1pjswbo-0 jVzsf"
+  onClick={[Function]}
+>
+  <div
+    className="PopUp__PopUpDiv-sc-1pjswbo-1 SYVVD"
+    onClick={[Function]}
+  >
+    <div
+      className="PopUp__TitleDiv-sc-1pjswbo-2 jRSClx"
+    >
+      <div
+        className="PopUp__CloseButton-sc-1pjswbo-4 daVERV"
+        onClick={[Function]}
+      />
+      <h2
+        className="PopUp__Heading-sc-1pjswbo-3 jeSsEs"
+      >
+        some title
+      </h2>
+    </div>
+    <div>
+      children
+    </div>
+  </div>
+</div>
+`;

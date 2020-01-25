@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwipeUpDrawer should render with children 1`] = `
+<SwipeUpDrawer>
+  <SwipeUpDrawer__Container>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "SwipeUpDrawer__Container-hq4ydd-0",
+            "isStatic": false,
+            "lastClassName": "kgtPot",
+            "rules": Array [
+              "border-top:1px solid ",
+              "rgba(0, 0, 0, 0.08)",
+              ";border-radius:",
+              [Function],
+              ";background-color:#FFFFFF;box-shadow:0 -10px 10px -9px ",
+              "rgba(0, 0, 0, 0.08)",
+              ";width:100%;height:100%;overflow-y:scroll;z-index:3;box-sizing:border-box;",
+            ],
+          },
+          "displayName": "SwipeUpDrawer__Container",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "SwipeUpDrawer__Container-hq4ydd-0",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="SwipeUpDrawer__Container-hq4ydd-0 kgtPot"
+      >
+        <SwipeUpDrawer__ContainerDrawer>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "SwipeUpDrawer__ContainerDrawer-hq4ydd-1",
+                  "isStatic": true,
+                  "lastClassName": "Jrdml",
+                  "rules": Array [
+                    "display:flex;justify-content:center;margin-bottom:5px;margin-top:5px;",
+                  ],
+                },
+                "displayName": "SwipeUpDrawer__ContainerDrawer",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "SwipeUpDrawer__ContainerDrawer-hq4ydd-1",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="SwipeUpDrawer__ContainerDrawer-hq4ydd-1 Jrdml"
+            >
+              <SwipeUpDrawer__ContainerDrawerIcon>
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "SwipeUpDrawer__ContainerDrawerIcon-hq4ydd-2",
+                        "isStatic": true,
+                        "lastClassName": "cAbsfg",
+                        "rules": Array [
+                          "display:block;width:50px;border:3px solid rgba(0,0,0,0.1);border-radius:10px;",
+                        ],
+                      },
+                      "displayName": "SwipeUpDrawer__ContainerDrawerIcon",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "SwipeUpDrawer__ContainerDrawerIcon-hq4ydd-2",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                >
+                  <div
+                    className="SwipeUpDrawer__ContainerDrawerIcon-hq4ydd-2 cAbsfg"
+                  />
+                </StyledComponent>
+              </SwipeUpDrawer__ContainerDrawerIcon>
+            </div>
+          </StyledComponent>
+        </SwipeUpDrawer__ContainerDrawer>
+        <div>
+          Some text
+        </div>
+        <div>
+          Some more text
+        </div>
+      </div>
+    </StyledComponent>
+  </SwipeUpDrawer__Container>
+</SwipeUpDrawer>
+`;
+
+exports[`SwipeUpDrawer should render with no children 1`] = `
+<SwipeUpDrawer>
+  <SwipeUpDrawer__Container>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "SwipeUpDrawer__Container-hq4ydd-0",
+            "isStatic": false,
+            "lastClassName": "kgtPot",
+            "rules": Array [
+              "border-top:1px solid ",
+              "rgba(0, 0, 0, 0.08)",
+              ";border-radius:",
+              [Function],
+              ";background-color:#FFFFFF;box-shadow:0 -10px 10px -9px ",
+              "rgba(0, 0, 0, 0.08)",
+              ";width:100%;height:100%;overflow-y:scroll;z-index:3;box-sizing:border-box;",
+            ],
+          },
+          "displayName": "SwipeUpDrawer__Container",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "SwipeUpDrawer__Container-hq4ydd-0",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="SwipeUpDrawer__Container-hq4ydd-0 kgtPot"
+      >
+        <SwipeUpDrawer__ContainerDrawer>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "SwipeUpDrawer__ContainerDrawer-hq4ydd-1",
+                  "isStatic": true,
+                  "lastClassName": "Jrdml",
+                  "rules": Array [
+                    "display:flex;justify-content:center;margin-bottom:5px;margin-top:5px;",
+                  ],
+                },
+                "displayName": "SwipeUpDrawer__ContainerDrawer",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "SwipeUpDrawer__ContainerDrawer-hq4ydd-1",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="SwipeUpDrawer__ContainerDrawer-hq4ydd-1 Jrdml"
+            >
+              <SwipeUpDrawer__ContainerDrawerIcon>
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "SwipeUpDrawer__ContainerDrawerIcon-hq4ydd-2",
+                        "isStatic": true,
+                        "lastClassName": "cAbsfg",
+                        "rules": Array [
+                          "display:block;width:50px;border:3px solid rgba(0,0,0,0.1);border-radius:10px;",
+                        ],
+                      },
+                      "displayName": "SwipeUpDrawer__ContainerDrawerIcon",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "SwipeUpDrawer__ContainerDrawerIcon-hq4ydd-2",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                >
+                  <div
+                    className="SwipeUpDrawer__ContainerDrawerIcon-hq4ydd-2 cAbsfg"
+                  />
+                </StyledComponent>
+              </SwipeUpDrawer__ContainerDrawerIcon>
+            </div>
+          </StyledComponent>
+        </SwipeUpDrawer__ContainerDrawer>
+      </div>
+    </StyledComponent>
+  </SwipeUpDrawer__Container>
+</SwipeUpDrawer>
+`;
