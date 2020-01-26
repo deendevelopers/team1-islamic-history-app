@@ -10,6 +10,9 @@ import SingleHistoricEventHeader from './SingleHistoricEventHeader';
 import SingleHistoricEventText from './SingleHistoricEventText';
 import SingleHistoricEventScrollIndicator from './SingleHistoricEventScrollIndicator';
 import SingleHistoricEventFooter from './SingleHistoricEventFooter';
+import SingleHistoricEventLikeButton from './SingleHistoricEventLikeButton';
+import PropTypes from 'prop-types';
+import SingleHistoricEvent from './SingleHistoricEvent';
 
 const FactViewWrapper = styled.div`
   display: flex;
@@ -30,20 +33,29 @@ const FactViewInnerWrapper = styled.div`
 FactViewInnerWrapper.displayName = 'FactViewInnerWrapper';
 
 function SingleHistoricEventQuoteView(props) {
-  const { event, onNextClick } = { ...props };
+  const { event, isLiked, onNextClick, onLikeClick } = { ...props };
 
   return (
     <FactViewWrapper>
       <FactViewInnerWrapper>
         <RcQueueAnim delay={700}>
-          <SingleHistoricEventHeader text={event.date} key={1} />
-          <SingleHistoricEventText text={event.description} key={2} />
-          <SingleHistoricEventFooter text={'– ' + event.subject} key={3} />
+          <SingleHistoricEvent
+            event={event}
+            isLiked={isLiked}
+            onLikeClick={onLikeClick}
+          />
         </RcQueueAnim>
       </FactViewInnerWrapper>
       <SingleHistoricEventScrollIndicator onClick={onNextClick} />
     </FactViewWrapper>
   );
 }
+
+SingleHistoricEventQuoteView.propTypes = {
+  event: PropTypes.object,
+  isLiked: PropTypes.bool,
+  onNextClick: PropTypes.func,
+  onLikeClick: PropTypes.func
+};
 
 export default SingleHistoricEventQuoteView;
