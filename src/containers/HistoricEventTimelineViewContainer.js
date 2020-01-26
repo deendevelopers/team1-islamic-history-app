@@ -1,37 +1,27 @@
-import React, {useEffect, useState} from 'react';
-import FactText from '../components/FactText';
-import styled from 'styled-components';
-import NavbarContainer from './navbar/NavbarContainer';
-import FlexView, {FlexColumnFullScreenView} from '../components/views/FlexView';
+import React, { useEffect, useState } from 'react';
+import { FlexColumnFullScreenView } from '../components/views/FlexView';
 import historicEventsService from '../services/HistoricEventsService';
-import HistoricEventTimelineView
-  from '../components/timeline/HistoricEventTimelineView';
-
-const FactViewWrapper = styled(FlexView)
-    .attrs(
-        {flexDirection: 'row', alignItems: 'center', justifyContent: 'center'})`
-flex: 1;
-`;
+import HistoricEventTimelineView from '../components/timeline/HistoricEventTimelineView';
+import { groupBy } from 'lodash'
 
 function HistoricEventTimelineViewContainer(props) {
-  const {timelineId} = {...props};
-  const [events, setEvents] = useState([]);
+  const { timelineId } = { ...props };
+  const [timelines, setTimelines] = useState([]);
 
   useEffect(() => {
-    historicEventsService.getAllForTimelineId(3)
-        .then(data => {
-          const randomisedEvents = data.map(e => {
-            e.timelineLineHeight = Math.round(Math.random()*100);
-            return e;
-          });
-          setEvents(randomisedEvents);
-        });
+    historicEventsService.getAll()
+      .then(historicEvents => {
+        const filteredEvents = historicEvents.filter(event => [1, 2, 3].find((id) => id === event.timeline_id));
+        const groupedEvents = groupBy(filteredEvents, "timeline_id")
+        setTimelines(groupedEvents);
+      })
+
   }, [timelineId]);
 
   return (
-      <FlexColumnFullScreenView>
-        <HistoricEventTimelineView events={events}/>
-      </FlexColumnFullScreenView>
+    <FlexColumnFullScreenView>
+      <HistoricEventTimelineView timelines={timelines} />
+    </FlexColumnFullScreenView>
   );
 }
 

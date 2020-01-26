@@ -39,7 +39,7 @@ function SingleHistoricEvent(props) {
           <React.Fragment>
               <SingleHistoricEventHeader text={event.date} key={1}/>
               <SingleHistoricEventText text={event.description} key={2}/>
-              <SingleHistoricEventFooter text={'-- ' + event.subject + ' --'} key={3}/>
+              <SingleHistoricEventFooter text={'– ' + event.subject} key={3}/>
               <Buttons>
               <SingleHistoricEventLikeButton isLiked={isLiked} onClick={onLikeClick}/>
               </Buttons>

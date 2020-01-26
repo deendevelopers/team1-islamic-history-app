@@ -4,11 +4,12 @@ import {FlexColumnFullWidthView} from '../views/FlexView';
 import {EVENT_QUOTE_USER_COLOR, FACT_COLOR} from '../../constants/styles';
 
 const Header = styled.div`
-  font-size: medium;
-  font-weight: bold;
-  text-align: center;
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 900;
+  text-align: right;
+  width: 80%;
   color: ${EVENT_QUOTE_USER_COLOR};
-  font-style: italic;
 `;
 
 function SingleHistoricEventFooter(props) {
