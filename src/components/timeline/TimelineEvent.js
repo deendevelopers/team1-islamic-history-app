@@ -2,7 +2,7 @@ import TimelineLine from './TimelineLine';
 import React from 'react';
 import PropTypes from 'prop-types';
 import TimelineClickableCircle from './TimelineClickableCircle';
-import { FlexColumnFullScreenView, FlexColumnView } from '../views/FlexView';
+// import { FlexColumnFullScreenView, FlexColumnView } from '../views/FlexView';
 import styled from 'styled-components';
 import RcQueueAnim from 'rc-queue-anim';
 
@@ -14,14 +14,9 @@ const View = styled.div`
 function TimelineEvent(props) {
   const { event, onEventClick } = { ...props };
 
-  var above;
-  if (!event.isFirst) {
-    above = <TimelineLine height={event.eventPosition} key={1} />
-  }
-
   return (
-    <View key={1}>
-      {above}
+    <View>
+      {!event.isFirst ? <TimelineLine height={event.eventPosition} key={event.id} /> : null}
       <RcQueueAnim delay={700} type={'scale'} component={'div'} {...props}>
         <TimelineClickableCircle
           event={event}
