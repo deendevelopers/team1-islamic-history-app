@@ -27,7 +27,7 @@ function IslamicHistoryApp(props) {
 
   useEffect(() => {
     fetchUser(currentUsername);
-  }, [currentUsername, fetchUser]);
+  }, [currentUsername]);
 
     return (
         <FlexView flexDirection={'column'} height={'100%'} justifyContent={'flex-end'}>
