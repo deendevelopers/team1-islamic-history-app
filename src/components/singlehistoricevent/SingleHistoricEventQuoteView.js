@@ -29,13 +29,13 @@ align-items: center;
 FactViewInnerWrapper.displayName = 'FactViewInnerWrapper';
 
 function SingleHistoricEventQuoteView(props) {
-  const {event, onNextClick, onLikeClick} = {...props};
+  const {event, isLiked, onNextClick, onLikeClick} = {...props};
 
   return (
       <FactViewWrapper>
         <FactViewInnerWrapper>
           <RcQueueAnim delay={700}>
-            <SingleHistoricEvent event={event} onLikeClick={onLikeClick}/>
+            <SingleHistoricEvent event={event} isLiked={isLiked} onLikeClick={onLikeClick}/>
           </RcQueueAnim>
         </FactViewInnerWrapper>
         <SingleHistoricEventScrollIndicator onClick={onNextClick}/>
@@ -45,6 +45,7 @@ function SingleHistoricEventQuoteView(props) {
 
 SingleHistoricEventQuoteView.propTypes = {
   event: PropTypes.object,
+  isLiked: PropTypes.bool,
   onNextClick: PropTypes.func,
   onLikeClick: PropTypes.func,
 };

@@ -24,21 +24,32 @@ align-items: center;
 `;
 FactViewInnerWrapper.displayName = 'FactViewInnerWrapper';
 
+const Buttons = styled.div`
+padding-top: 5px;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+`;
+
 function SingleHistoricEvent(props) {
-  const {event, onLikeClick} = {...props};
+  const {event, isLiked, onLikeClick} = {...props};
 
   return (
           <React.Fragment>
               <SingleHistoricEventHeader text={event.date} key={1}/>
               <SingleHistoricEventText text={event.description} key={2}/>
               <SingleHistoricEventFooter text={'-- ' + event.subject + ' --'} key={3}/>
-              <SingleHistoricEventLikeButton onClick={onLikeClick}/>
+              <Buttons>
+              <SingleHistoricEventLikeButton isLiked={isLiked} onClick={onLikeClick}/>
+              </Buttons>
           </React.Fragment>
 );
 }
 
 SingleHistoricEvent.propTypes = {
   event: PropTypes.object,
+  isLiked: PropTypes.bool,
   onLikeClick: PropTypes.func,
 };
 

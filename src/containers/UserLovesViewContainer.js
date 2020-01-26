@@ -14,17 +14,7 @@ import {
   EVENT_QUOTE_USER_COLOR,
   FACT_COLOR,
 } from '../constants/styles';
-
-const EventWrapper = styled.div`
-padding-top: 10px;
-padding-bottom: 30px;
-border-bottom-width: 2px;
-// eslint-disable-next-line no-undef
-border-bottom-color: ${FACT_COLOR};
-border-bottom-style: dotted;
-margin-left: 10px;
-margin-right: 10px;
-`;
+import UserLovesView from '../components/loves/UserLovesView';
 
 function UserLovesViewContainer(props) {
   const {user} = {...props};
@@ -33,6 +23,7 @@ function UserLovesViewContainer(props) {
   useEffect(() => {
     lovesService.getLovesByUserId(user.user.id)
         .then(userIdToEventId => {
+          console.log("userIdToEventId", userIdToEventId);
           const eventIds = userIdToEventId.map(
               userIdToEventId => userIdToEventId.event_id);
           console.log('event ids', eventIds);
@@ -46,17 +37,9 @@ function UserLovesViewContainer(props) {
   }, [user]);
 
   console.log(events);
-
-  const eventComponents = events.map(e => {
-    return (
-        <EventWrapper>
-          <SingleHistoricEvent event={e}/>
-        </EventWrapper>
-    );
-  });
   return (
       <ScrollableView flexDirection={'column'} y={true}>
-        {eventComponents}
+        <UserLovesView events={events} />
       </ScrollableView>
   );
 }

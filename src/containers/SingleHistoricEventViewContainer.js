@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import FlexView from '../components/views/FlexView';
 import historicEventsService from '../services/HistoricEventsService';
+import lovesService from '../services/LovesService';
 import SingleHistoricEventQuoteView
   from '../components/singlehistoricevent/SingleHistoricEventQuoteView';
 import {connect} from 'react-redux';
@@ -17,18 +18,32 @@ align-items: center;
 function SingleHistoricEventViewContainer(props) {
   const {user, navigateToSingleHistoricEventDetail} = {...props};
   const [event, setEvent] = useState('');
+  const [isLiked, setIsLiked] = useState('');
 
   useEffect(() => {
-    historicEventsService.getOne(Math.round(Math.random() * 10))
-        .then(data => setEvent(data));
+    fetchEvent();
   }, []);
+
+  function fetchEvent() {
+    console.log("fetch event");
+    historicEventsService.getOne(Math.round(Math.random() * 10))
+        .then(data => {
+          setEvent(data);
+          lovesService.getLovesByUserIdAndEventId(user.user.id, data.id)
+              .then(loveData => {
+                console.log("loves service", loveData);
+                setIsLiked(loveData.length > 0);
+              })
+        });
+  }
 
   function goToDetails() {
     navigateToSingleHistoricEventDetail();
   }
 
-  function onLikeClick(event_id) {
-    console.log("like clicked")
+  function onLikeClick() {
+    console.log("like clicked");
+    lovesService.postLove(event.id, user.user.id).then(r => console.log(r));
     // updateUserLoves(user, event_id);
   }
 
@@ -36,6 +51,7 @@ function SingleHistoricEventViewContainer(props) {
       <FlexView flexDirection={'column'} height={'100%'}>
         <SingleHistoricEventQuoteView
             event={event}
+            isLiked={isLiked}
             onNextClick={goToDetails}
             onLikeClick={onLikeClick}
         />
