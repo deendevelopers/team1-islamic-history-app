@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {API_HISTORIC_EVENTS_URL} from '../constants/api';
+import { API_HISTORIC_EVENTS_URL } from '../constants/api';
 
 class HistoricEventsService {
   async getAll() {
@@ -9,7 +9,7 @@ class HistoricEventsService {
   }
 
   async getOne(id) {
-    const response =  await axios.get(API_HISTORIC_EVENTS_URL + "/" + id);
+    const response = await axios.get(API_HISTORIC_EVENTS_URL + "/" + id);
     console.log(response);
     return response.data;
   }

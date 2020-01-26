@@ -2,7 +2,6 @@ import React from 'react';
 import TimelineEvent from './TimelineEvent';
 import * as PropTypes from 'prop-types'
 import styled from 'styled-components';
-import TimelineLine from './TimelineLine';
 
 const View = styled.div`
 display: flex;
@@ -11,15 +10,12 @@ width: 30%;
 `;
 
 function HistoricEventTimelinePoints(props) {
-  const {events, onEventClick} = {...props};
-
-  const timeline = events.map(e => <TimelineEvent event={e} onEventClick={onEventClick}/>);
+  const { events, onEventClick } = { ...props };
+  const timeline = events.map(e => <TimelineEvent event={e} onEventClick={onEventClick} />);
   return (
-      <View>
-        { timeline }
-        {/* Fills in the rest of the space after the last Event */}
-        {/* <TimelineLine fill/> */}
-      </View>
+    <View>
+      {timeline}
+    </View>
   )
 }
 
