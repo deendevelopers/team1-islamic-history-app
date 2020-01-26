@@ -17,12 +17,12 @@ margin-right: 10px;
 
 
 function UserLovesView(props) {
-  const {events} = {...props};
+  const {events, onLikeClick} = {...props};
 
   const eventComponents = events.map(e => {
     return (
         <EventWrapper>
-          <SingleHistoricEvent event={e} isLiked={true}/>
+          <SingleHistoricEvent event={e} isLiked={true} onLikeClick={() => onLikeClick(e.loveId)}/>
         </EventWrapper>
     );
   });

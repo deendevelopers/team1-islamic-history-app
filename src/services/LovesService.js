@@ -41,6 +41,12 @@ class LovesService {
     console.log(response);
     return response.data;
   }
+
+  async deleteLove(id) {
+    const response = await axios.delete(API_LOVES_URL + `/${id}`);
+    console.log(response);
+    return response.data;
+  }
 }
 
 export default new LovesService();

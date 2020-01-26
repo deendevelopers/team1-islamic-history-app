@@ -21,26 +21,35 @@ function UserLovesViewContainer(props) {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
+    fetchLovedEvents();
+  }, [user]);
+
+  function fetchLovedEvents() {
     lovesService.getLovesByUserId(user.id)
         .then(userIdToEventId => {
           console.log("userIdToEventId", userIdToEventId);
-          const eventIds = userIdToEventId.map(
-              userIdToEventId => userIdToEventId.event_id);
+          const eventIds = userIdToEventId.map(userIdToEventId => userIdToEventId.event_id);
           console.log('event ids', eventIds);
           historicEventsService.getAll()
               .then(eventData => {
                 const filteredEvents = eventData.filter(
                     eventData => eventIds.some((id) => id === eventData.id));
                 filteredEvents.isLiked = true;
+                filteredEvents.loveId = userIdToEventId.id;
                 setEvents(filteredEvents);
               });
         });
-  }, [user]);
+  }
 
-  console.log(events);
+  function onDislike(id) {
+    lovesService.deleteLove(id).then(() => {
+      fetchLovedEvents();
+    });
+  }
+
   return (
       <ScrollableView flexDirection={'column'} y={true}>
-        <UserLovesView events={events} />
+        <UserLovesView events={events} onLikeClick={onDislike}/>
       </ScrollableView>
   );
 }

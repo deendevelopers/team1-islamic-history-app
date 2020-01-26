@@ -35,13 +35,14 @@ align-items: center;
 function SingleHistoricEvent(props) {
   const {event, isLiked, onLikeClick} = {...props};
 
+  console.log("SingleHistoricEvent", event);
   return (
           <React.Fragment>
               <SingleHistoricEventHeader text={event.date} key={1}/>
               <SingleHistoricEventText text={event.description} key={2}/>
               <SingleHistoricEventFooter text={'– ' + event.subject} key={3}/>
               <Buttons>
-              <SingleHistoricEventLikeButton isLiked={isLiked} onClick={onLikeClick}/>
+              <SingleHistoricEventLikeButton event={event} isLiked={isLiked} onClick={onLikeClick} />
               </Buttons>
           </React.Fragment>
 );
