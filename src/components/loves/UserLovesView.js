@@ -22,7 +22,7 @@ function UserLovesView(props) {
   const eventComponents = events.map(e => {
     return (
         <EventWrapper>
-          <SingleHistoricEvent event={e}/>
+          <SingleHistoricEvent event={e} isLiked={true}/>
         </EventWrapper>
     );
   });

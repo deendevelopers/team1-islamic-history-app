@@ -41,7 +41,7 @@ function SettingsViewContainer(props) {
 }
 
 const mapStateToProps = (state) => ({
-  currentUsername: state.user.currentUsername
+  currentUsername: state.user.name
 });
 
 const mapDispatchToProps = (dispatch) => ({

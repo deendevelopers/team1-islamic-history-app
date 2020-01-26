@@ -29,7 +29,7 @@ function SingleHistoricEventViewContainer(props) {
     historicEventsService.getOne(Math.round(Math.random() * 10))
         .then(data => {
           setEvent(data);
-          lovesService.getLovesByUserIdAndEventId(user.user.id, data.id)
+          lovesService.getLovesByUserIdAndEventId(user.id, data.id)
               .then(loveData => {
                 console.log("loves service", loveData);
                 setIsLiked(loveData.length > 0);
@@ -43,7 +43,7 @@ function SingleHistoricEventViewContainer(props) {
 
   function onLikeClick() {
     console.log("like clicked");
-    lovesService.postLove(event.id, user.user.id).then(r => console.log(r));
+    lovesService.postLove(event.id, user.id).then(r => console.log(r));
     // updateUserLoves(user, event_id);
   }
 

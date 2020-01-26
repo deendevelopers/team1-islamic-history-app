@@ -159,6 +159,11 @@
       "name": "Mahfuz",
       "likes": [],
       "id": 2
+    },
+    {
+      "name": "Jawad",
+      "likes": [],
+      "id": 3
     }
   ],
   "loves": [
@@ -201,6 +206,21 @@
       "event_id": 4,
       "user_id": 1,
       "id": 8
+    },
+    {
+      "event_id": 9,
+      "user_id": 1,
+      "id": 9
+    },
+    {
+      "event_id": 5,
+      "user_id": 3,
+      "id": 10
+    },
+    {
+      "event_id": 1,
+      "user_id": 3,
+      "id": 11
     }
   ]
 }
