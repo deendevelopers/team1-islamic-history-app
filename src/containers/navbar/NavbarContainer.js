@@ -10,10 +10,12 @@ import {
 import FlexView from '../../components/views/FlexView';
 import {connect} from 'react-redux';
 import {
-  navigateToLikedEvents,
+  navigateToLikedEvents, navigateToSettings,
   navigateToSingleHistoricEventDetail, navigateToSingleHistoricEventMain,
   navigateToTimelineEvents,
 } from '../../store/navigation/actions';
+import * as pages from '../../constants/navigation';
+import {COLOR_THEME_PRIMARY, FACT_COLOR} from '../../constants/styles';
 
 const Navbar = styled.nav`
 height: 50px;
@@ -39,7 +41,7 @@ padding-right: 5px;
 `;
 
 function NavbarContainer(props) {
-  const {navigateToTimeline, navigateToHome} = {...props};
+  const {page, navigateToTimeline, navigateToHome, navigateToLikedEvents, navigateToSettings} = {...props};
 
   return (
       <Navbar>
@@ -48,10 +50,10 @@ function NavbarContainer(props) {
           {/*<AppText>Settings</AppText>*/}
           {/*<AppText>Account</AppText>*/}
           <AppIconWrapper>
-            <FontAwesomeIcon icon={faHome} size={'lg'} onClick={navigateToHome}/>
-            <FontAwesomeIcon icon={faStream} size={'lg'} onClick={navigateToTimeline}/>
-            <FontAwesomeIcon icon={faHeart} size={'lg'} onClick={navigateToLikedEvents}/>
-            <FontAwesomeIcon icon={faCog} size={'lg'}/>
+            <FontAwesomeIcon icon={faHome} size={'lg'} onClick={navigateToHome} color={page === pages.SINGLE_HISTORIC_EVENT_MAIN_VIEW ? COLOR_THEME_PRIMARY : FACT_COLOR}/>
+            <FontAwesomeIcon icon={faStream} size={'lg'} onClick={navigateToTimeline} color={page === pages.TIMELINE_HISTORIC_EVENTS_VIEW ? COLOR_THEME_PRIMARY : FACT_COLOR}/>
+            <FontAwesomeIcon icon={faHeart} size={'lg'} onClick={navigateToLikedEvents} color={page === pages.LOVED_HISTORIC_EVENTS_VIEW ? COLOR_THEME_PRIMARY : FACT_COLOR}/>
+            <FontAwesomeIcon icon={faCog} size={'lg'} onClick={navigateToSettings} color={page === pages.SETTINGS_VIEW ? COLOR_THEME_PRIMARY : FACT_COLOR}/>
           </AppIconWrapper>
         </FlexView>
       </Navbar>
@@ -59,12 +61,14 @@ function NavbarContainer(props) {
 }
 
 const mapStateToProps = (state) => ({
+  page: state.navigation.page
 });
 
 const mapDispatchToProps = (dispatch) => ({
   navigateToHome: () => dispatch(navigateToSingleHistoricEventMain()),
   navigateToTimeline: () => dispatch(navigateToTimelineEvents()),
   navigateToLikedEvents: () => dispatch(navigateToLikedEvents()),
+  navigateToSettings: () => dispatch(navigateToSettings()),
 });
 
 
