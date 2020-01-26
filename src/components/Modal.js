@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import {FlexRowFullScreenView} from './views/FlexView';
 import RcQueueAnim from 'rc-queue-anim';
 import * as PropTypes from 'prop-types'
-import {FACT_COLOR} from '../constants/styles';
 import {func} from 'prop-types';
+import { FACT_COLOR, FACT_BACKGROUND_COLOR, FACT_BORDER_COLOR } from '../constants/styles';
 
 const ModalView = styled(FlexRowFullScreenView)`
 width: 100%;
@@ -16,10 +16,10 @@ z-index: 100;
 `;
 
 const ModalWrapper = styled.div`
-background-color: white;
+background-color: ${FACT_BACKGROUND_COLOR};
 border-radius: 10px;
-border-color: ${FACT_COLOR};
-border-width: 1px;
+border-color: ${FACT_BORDER_COLOR};
+border-width: 2px;
 border-style: solid;
 opacity: 1;
 `;
