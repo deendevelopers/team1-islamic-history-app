@@ -15,10 +15,13 @@ import NavbarContainer from './containers/navbar/NavbarContainer';
 import HistoricEventTimelineViewContainer
   from './containers/HistoricEventTimelineViewContainer';
 
+const ENV = process.env.API_URL;
 function IslamicHistoryApp(props) {
   const {page} = {...props};
 
   const history = useHistory();
+
+  console.log(ENV);
 
   useEffect(() => {
     history.push(page)
@@ -26,13 +29,13 @@ function IslamicHistoryApp(props) {
 
     return (
         <FlexView flexDirection={'column'} height={'100%'} justifyContent={'flex-end'}>
-          <NavbarContainer/>
           <Switch>
             <Route exact path={SINGLE_HISTORIC_EVENT_MAIN_VIEW} component={() => <SingleHistoricEventViewContainer/>}/>
             <Route exact path={SINGLE_HISTORIC_EVENT_DETAIL_VIEW} component={() => <SingleHistoricEventDetailViewContainer/>}/>
             <Route exact path={TIMELINE_HISTORIC_EVENTS_VIEW} component={() => <HistoricEventTimelineViewContainer/>}/>
             {/*<Redirect exact from="/" to={SINGLE_HISTORIC_EVENT_DETAIL_VIEW}/>*/}
           </Switch>
+          <NavbarContainer/>
         </FlexView>
     );
 }

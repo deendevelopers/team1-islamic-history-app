@@ -5,9 +5,10 @@ import * as PropTypes from 'prop-types'
 function HistoricEventTimelineDetails(props) {
   const {events} = {...props};
 
+  // console.log(events[0].subject)
   return (
       <FlexRowFullScreenView>
-        Details here
+        {events && events.length > 0 && events[0].subject}
       </FlexRowFullScreenView>
   )
 }

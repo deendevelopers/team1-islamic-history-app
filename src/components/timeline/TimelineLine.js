@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import {COLOR_TIMELINE_LINE} from '../../constants/styles';
 import PropTypes from 'prop-types';
 
+const MINIMUM_HEIGHT = 10;
+
 const Line = styled.div`
 //min-height: 10px;
 border-color: ${COLOR_TIMELINE_LINE};
@@ -19,7 +21,7 @@ function TimelineLine(props) {
   let style = {};
   console.log("height:", height);
   if(height) {
-    style = {...style, height: `${height}px`}
+    style = {...style, height: `${MINIMUM_HEIGHT + height}px`}
   }
   if(fill) {
     style = {...style, flex: 1}

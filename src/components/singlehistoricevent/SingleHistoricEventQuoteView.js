@@ -17,16 +17,16 @@ display: flex;
 flex-direction: column;
 flex: 1;
 align-items: center;
+justify-content: space-evenly;
 `;
 FactViewWrapper.displayName = 'FactViewWrapper';
 
 const FactViewInnerWrapper = styled.div`
 display: flex;
 flex-direction: column;
-flex: auto;
-justify-content: center;
+justify-content: start;
 height: 50%;
-align-items: stretch;
+align-items: center;
 `;
 FactViewInnerWrapper.displayName = 'FactViewInnerWrapper';
 
@@ -36,7 +36,7 @@ function SingleHistoricEventQuoteView(props) {
   return (
       <FactViewWrapper>
         <FactViewInnerWrapper>
-          <RcQueueAnim delay={700} component={"div"}>
+          <RcQueueAnim delay={700}>
               <SingleHistoricEventHeader text={event.date} key={1}/>
               <SingleHistoricEventText text={event.description} key={2}/>
               <SingleHistoricEventFooter text={'-- ' + event.subject + ' --'}

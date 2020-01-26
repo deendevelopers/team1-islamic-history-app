@@ -14,6 +14,7 @@ const navigationReducer = (state = INITIAL_STATE, action) => {
     case types.NAVIGATE_TO_SINGLE_HISTORIC_EVENT_MAIN:
     case types.NAVIGATE_TO_SINGLE_HISTORIC_EVENT_DETAIL:
     case types.NAVIGATE_TO_TIMELINE_HISTORIC_EVENTS:
+    case types.NAVIGATE_TO_LIKED_EVENTS:
       return {page: action.page};
     default:
       return state;
