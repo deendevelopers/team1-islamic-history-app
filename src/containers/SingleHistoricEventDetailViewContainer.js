@@ -23,10 +23,11 @@ function SingleHistoricEventViewContainer() {
   const [event, setEvent] = useState('');
 
   useEffect(() => {
-    const items = historicEventsService.getAll().length;
-    historicEventsService
-      .getOne(Math.round(Math.random() * items))
+    historicEventsService.getAll()
+    .then(items=>{
+      historicEventsService.getOne(Math.round(Math.random() * items.length))
       .then(data => setEvent(data));
+    })
   }, []);
 
   console.log(event);
