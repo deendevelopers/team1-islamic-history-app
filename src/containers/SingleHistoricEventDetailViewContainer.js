@@ -18,6 +18,7 @@ const FactViewWrapper = styled.div`
   align-items: center;
 `;
 
+
 function SingleHistoricEventViewContainer() {
   const [event, setEvent] = useState('');
 
@@ -31,9 +32,7 @@ function SingleHistoricEventViewContainer() {
   console.log(event);
 
   return (
-    <FlexView flexDirection={'column'} height={'100%'}>
-      <SingleHistoricEventDetailsView />
-    </FlexView>
+    <SingleHistoricEventDetailsView event={event}/>
   );
 }
 

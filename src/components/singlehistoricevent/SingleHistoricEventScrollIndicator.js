@@ -21,7 +21,7 @@ function SingleHistoricEventScrollIndicator(props) {
   return (
       <FlexColumnFullWidthView {...props}>
         <Header>
-          Read More
+          See where
           <TweenOne
               animation={{
                 y: 10,
