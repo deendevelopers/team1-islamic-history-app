@@ -1,14 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import RcQueueAnim from 'rc-queue-anim';
 import SingleHistoricEventHeader from './SingleHistoricEventHeader';
 import SingleHistoricEventText from './SingleHistoricEventText';
-import SingleHistoricEventScrollIndicator
-  from './SingleHistoricEventScrollIndicator';
 import SingleHistoricEventFooter from './SingleHistoricEventFooter';
 import SingleHistoricEventLikeButton from './SingleHistoricEventLikeButton';
 import PropTypes from 'prop-types';
-import SingleHistoricEvent from './SingleHistoricEvent';
 
 const FactViewWrapper = styled.div`
 display: flex;
@@ -28,25 +24,22 @@ align-items: center;
 `;
 FactViewInnerWrapper.displayName = 'FactViewInnerWrapper';
 
-function SingleHistoricEventQuoteView(props) {
-  const {event, onNextClick, onLikeClick} = {...props};
+function SingleHistoricEvent(props) {
+  const {event, onLikeClick} = {...props};
 
   return (
-      <FactViewWrapper>
-        <FactViewInnerWrapper>
-          <RcQueueAnim delay={700}>
-            <SingleHistoricEvent event={event} onLikeClick={onLikeClick}/>
-          </RcQueueAnim>
-        </FactViewInnerWrapper>
-        <SingleHistoricEventScrollIndicator onClick={onNextClick}/>
-      </FactViewWrapper>
+          <React.Fragment>
+              <SingleHistoricEventHeader text={event.date} key={1}/>
+              <SingleHistoricEventText text={event.description} key={2}/>
+              <SingleHistoricEventFooter text={'-- ' + event.subject + ' --'} key={3}/>
+              <SingleHistoricEventLikeButton onClick={onLikeClick}/>
+          </React.Fragment>
 );
 }
 
-SingleHistoricEventQuoteView.propTypes = {
+SingleHistoricEvent.propTypes = {
   event: PropTypes.object,
-  onNextClick: PropTypes.func,
   onLikeClick: PropTypes.func,
 };
 
-export default SingleHistoricEventQuoteView;
+export default SingleHistoricEvent;

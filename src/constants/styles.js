@@ -1,5 +1,12 @@
+export const COLOR_THEME_PRIMARY = "#40BABF";
+export const COLOR_THEME_SECONDARY = "#BF4540";
+
 export const FACT_COLOR = "#c2c1c0";
 export const EVENT_QUOTE_USER_COLOR = "#8a8080";
 
-export const COLOR_TIMELINE_LINE = "#c2c1c0";
-export const COLOR_TIMELINE_CIRCLE = "#c2c1c0";
+export const COLOR_TIMELINE_LINE = COLOR_THEME_PRIMARY;
+export const COLOR_TIMELINE_CIRCLE = COLOR_THEME_PRIMARY;
+
+
+export const COLOR_BUTTON_BACKGROUND = COLOR_THEME_PRIMARY;
+export const COLOR_BUTTON_TEXT = "#FFFFFF";
