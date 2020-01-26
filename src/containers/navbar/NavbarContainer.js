@@ -15,7 +15,7 @@ height: 50px;
 background-color: #FFFFFF;
 position: relative;
 width: 100%;
-padding-top: 15px;
+padding-top: 20px;
 padding-bottom: 10px;
 font-size: 20px;
 `;
@@ -28,8 +28,8 @@ const AppIconWrapper = styled(FlexView)
     })`
 color: #c2c2c2;
 width: 100%;
-padding-left: 10px;
-padding-right: 10px;
+padding-left: 15px;
+padding-right: 15px;
 `;
 
 function NavbarContainer(props) {

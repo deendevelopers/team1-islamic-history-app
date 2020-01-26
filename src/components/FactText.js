@@ -26,7 +26,7 @@ export default function FactText(props) {
         <Text>
           <LargerText style={{paddingRight: "10px"}}>"</LargerText>
           <QuoteText>{text}</QuoteText>
-          <LargerText style={{paddingLeft: "10px"}}>"</LargerText>
+          {/*<LargerText style={{paddingLeft: "10px"}}>"</LargerText>*/}
         </Text>
       </React.Fragment>
   );
