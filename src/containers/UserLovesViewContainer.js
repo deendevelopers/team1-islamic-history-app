@@ -31,6 +31,7 @@ function UserLovesViewContainer(props) {
               .then(eventData => {
                 const filteredEvents = eventData.filter(
                     eventData => eventIds.some((id) => id === eventData.id));
+                filteredEvents.isLiked = true;
                 setEvents(filteredEvents);
               });
         });
