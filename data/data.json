@@ -12,7 +12,7 @@
       "media_video": null,
       "media_book": "https://www.scribd.com/doc/121625686/Kitab-al-Tasrif",
       "date": "01-Jun-1000",
-      "location": "37.8882° N, 4.7794° W",
+      "location": [37.8882, -4.7794],
       "linked_to": [
         2
       ]
@@ -28,7 +28,7 @@
       "media_video": "https://www.youtube.com/watch?v=hh7x9WHwmrQ",
       "media_book": null,
       "date": "31-Aug-936",
-      "location": "37.8882° N, 4.7794° W",
+      "location": [37.8882, -4.7794],
       "linked_to": []
     },
     {
@@ -42,7 +42,7 @@
       "media_video": "https://www.youtube.com/watch?v=I8P0fhceQgA",
       "media_book": null,
       "date": "19-Feb-1005",
-      "location": "37.8882° N, 4.7794° W",
+      "location": [37.8882, -4.7794],
       "linked_to": [
         5
       ]
@@ -58,7 +58,7 @@
       "media_video": null,
       "media_book": null,
       "date": "23-Oct-1013",
-      "location": "37.8882° N, 4.7794° W",
+      "location": [37.8882, -4.7794],
       "linked_to": []
     },
     {
@@ -72,7 +72,7 @@
       "media_video": "https://www.youtube.com/watch?v=E8pwGDhppr0",
       "media_book": null,
       "date": "30-Aug-980",
-      "location": "39.9939° N, 64.3771° E",
+      "location": [39.9939, 64.3771],
       "linked_to": [
         3
       ]
@@ -88,7 +88,7 @@
       "media_video": null,
       "media_book": "https://antilogicalism.com/wp-content/uploads/2017/07/physics-of-healing2.pdf",
       "date": "01-Mar-1020",
-      "location": "34.7989° N, 48.5150° E",
+      "location": [34.7989, 48.5150],
       "linked_to": []
     },
     {
@@ -102,7 +102,7 @@
       "media_video": null,
       "media_book": "http://data.nur.nu/Kutub/English/Avicenna_Canon-of-Medicine_text.pdf",
       "date": "13-Dec-1025",
-      "location": "34.7989° N, 48.5150° E",
+      "location": [34.7989, 48.5150],
       "linked_to": []
     },
     {
@@ -116,7 +116,7 @@
       "media_video": "https://www.youtube.com/watch?v=E8pwGDhppr0",
       "media_book": null,
       "date": "22-Jun-1037",
-      "location": "34.7989° N, 48.5150° E",
+      "location": [34.7989, 48.5150],
       "linked_to": []
     },
     {
@@ -130,7 +130,7 @@
       "media_video": null,
       "media_book": null,
       "date": "22-Jun-1037",
-      "location": "34.7989° N, 48.5150° E",
+      "location": [34.7989, 48.5150],
       "linked_to": []
     },
     {
@@ -144,7 +144,7 @@
       "media_video": "https://www.youtube.com/watch?v=E8pwGDhppr0",
       "media_book": null,
       "date": "30-Aug-980",
-      "location": "39.9939° N, 64.3771° E",
+      "location": [39.9939, 64.3771],
       "linked_to": [
         3
       ]
