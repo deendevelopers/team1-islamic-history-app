@@ -10,19 +10,19 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHeart, faSortDown} from '@fortawesome/free-solid-svg-icons';
 import TweenOne from 'rc-tween-one';
 
-const Header = styled.div`
-  font-size: medium;
-  font-weight: bold;
-  text-align: center;
-  color: ${EVENT_QUOTE_USER_COLOR};
-  font-style: italic;
+const View = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 function SingleHistoricEventLikeButton(props) {
-  let {isLiked} = {...props};
+  const {event, isLiked} = {...props};
   const [updatedLike, setUpdateLke] = useState(null);
 
   console.log("button like", updatedLike, isLiked);
+  console.log("event", event);
 
   function onLikeClick() {
     setUpdateLke(!updatedLike);
@@ -38,9 +38,10 @@ function SingleHistoricEventLikeButton(props) {
   }
 
   return (
-      <FlexColumnFullWidthView>
+      <View>
         <FontAwesomeIcon icon={faHeart} size={'lg'} onClick={onLikeClick} color={getLike() ? COLOR_LOVE_HEART : FACT_COLOR }/>
-      </FlexColumnFullWidthView>
+        <div>{event.loves}</div>
+      </View>
   );
 }
 

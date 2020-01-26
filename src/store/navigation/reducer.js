@@ -7,8 +7,8 @@ import {
 } from '../../constants/navigation';
 
 const INITIAL_STATE = {
-  // page: SINGLE_HISTORIC_EVENT_MAIN_VIEW,
-  page: LOVED_HISTORIC_EVENTS_VIEW,
+  page: SINGLE_HISTORIC_EVENT_MAIN_VIEW,
+  // page: LOVED_HISTORIC_EVENTS_VIEW,
 };
 
 const navigationReducer = (state = INITIAL_STATE, action) => {

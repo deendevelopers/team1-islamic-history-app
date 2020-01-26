@@ -28,12 +28,13 @@ function SingleHistoricEventViewContainer(props) {
     console.log("fetch event");
     historicEventsService.getOne(Math.round(Math.random() * 10))
         .then(data => {
-          setEvent(data);
           lovesService.getLovesByUserIdAndEventId(user.id, data.id)
               .then(loveData => {
                 console.log("loves service", loveData);
                 setIsLiked(loveData.length > 0);
-              })
+                data["loves"] = loveData.length;
+                setEvent(data);
+              });
         });
   }
 
@@ -47,6 +48,7 @@ function SingleHistoricEventViewContainer(props) {
     // updateUserLoves(user, event_id);
   }
 
+  console.log("Single Event", event);
   return (
       <FlexView flexDirection={'column'} height={'100%'}>
         <SingleHistoricEventQuoteView
