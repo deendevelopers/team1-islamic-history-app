@@ -1,39 +1,47 @@
 import React from 'react';
-import styled from 'styled-components';
-import RcQueueAnim from 'rc-queue-anim';
-import SingleHistoricEventHeader from './SingleHistoricEventHeader';
-import SingleHistoricEventText from './SingleHistoricEventText';
-import SingleHistoricEventScrollIndicator
-  from './SingleHistoricEventScrollIndicator';
-import SingleHistoricEventFooter from './SingleHistoricEventFooter';
+import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 
-const FactViewWrapper = styled.div`
-display: flex;
-flex-direction: column;
-flex: 1;
-align-items: center;
-`;
-FactViewWrapper.displayName = 'FactViewWrapper';
+const divStyle = {
+  height: "100%",
+  width: "100%"
+};
 
-const FactViewInnerWrapper = styled.div`
-display: flex;
-flex-direction: column;
-flex: auto;
-justify-content: center;
-height: 50%;
-align-items: stretch;
-`;
-FactViewInnerWrapper.displayName = 'FactViewInnerWrapper';
-
+const popup = {
+  "font-size": "14px"  
+}
+const popupSubject = {
+  "fontWeight": "bold"
+}
 function SingleHistoricEventDetailsView(props) {
   const {event} = {...props};
-
   return (
-        <FactViewWrapper key={1}>
-          <FactViewInnerWrapper>
-          </FactViewInnerWrapper>
-        </FactViewWrapper>
+    event.location
+    ?
+      <LeafletMap style={divStyle}
+              center={event.location}
+              zoom={13}
+              attributionControl={true}
+              zoomControl={true}
+              doubleClickZoom={true}
+              scrollWheelZoom={true}
+              easeLinearity={0.35}
+              >
+              <TileLayer
+                  url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+              />
+                  <Marker position={
+                      event.location
+                  }>
+                      <Popup style={popup}>
+                        <span style={popupSubject}>{event.subject}:</span> {event.description}                        
+                      </Popup>                            
+                  </Marker>
+
+          </LeafletMap>
+
+    : <>
+      </>
   );
 }
 
-export default SingleHistoricEventDetailsView;
+export default SingleHistoricEventDetailsView;        

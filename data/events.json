@@ -9,6 +9,6 @@
   "media_video": "https://www.youtube.com/watch?v=E8pwGDhppr0",
   "media_book": null,
   "date": "22-Jun-1037",
-  "location": "34.7989° N, 48.5150° E",
+  "location": [34.7989, 48.5150],
   "linked_to": []
 }

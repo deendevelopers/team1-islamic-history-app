@@ -25,7 +25,7 @@ function IslamicHistoryApp(props) {
 
   useEffect(() => {
     history.push(page)
-  }, [page]);
+  }, [history, page]);
 
     return (
         <FlexView flexDirection={'column'} height={'100%'} justifyContent={'flex-end'}>

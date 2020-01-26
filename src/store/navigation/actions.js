@@ -6,9 +6,9 @@ export const navigateToSingleHistoricEventMain = () => ({
   page: view.SINGLE_HISTORIC_EVENT_MAIN_VIEW,
 });
 
-export const navigateToSingleHistoricEventDetail = () => ({
+export const navigateToSingleHistoricEventDetail = (event) => ({
   type: type.NAVIGATE_TO_SINGLE_HISTORIC_EVENT_DETAIL,
-  page: view.SINGLE_HISTORIC_EVENT_DETAIL_VIEW,
+  page: view.SINGLE_HISTORIC_EVENT_DETAIL_VIEW
 });
 
 export const navigateToTimelineEvents = () => ({
