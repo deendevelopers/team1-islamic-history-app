@@ -21,7 +21,7 @@ function UserLovesViewContainer(props) {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    lovesService.getLovesByUserId(user.user.id)
+    lovesService.getLovesByUserId(user.id)
         .then(userIdToEventId => {
           console.log("userIdToEventId", userIdToEventId);
           const eventIds = userIdToEventId.map(

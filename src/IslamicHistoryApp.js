@@ -46,7 +46,7 @@ function IslamicHistoryApp(props) {
 
 const mapStateToProps = (state) => ({
   page: state.navigation.page,
-  currentUsername: state.user.currentUsername
+  currentUsername: state.user.name
 });
 
 const mapDispatchToProps = (dispatch) => ({
