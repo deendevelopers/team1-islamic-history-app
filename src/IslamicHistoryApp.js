@@ -23,7 +23,7 @@ function IslamicHistoryApp(props) {
   useEffect(() => {
     console.log("Page changed", page);
     history.push(page);
-  }, [history, page]);
+  }, [page]);
 
   useEffect(() => {
     fetchUser(currentUsername);
