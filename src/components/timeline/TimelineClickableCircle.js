@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {COLOR_TIMELINE_CIRCLE} from '../../constants/styles';
+import { COLOR_TIMELINE_CIRCLE, COLOR_TIMELINE_FILLED } from '../../constants/styles';
 
 
 const View = styled.div`
@@ -13,6 +13,7 @@ flex-direction: row;
 const Circle = styled.div`
 height: 30px;
 width: 30px;
+// background-color: ${COLOR_TIMELINE_FILLED};
 border-style: solid;
 border-color: ${COLOR_TIMELINE_CIRCLE};
 border-width: 2px;
