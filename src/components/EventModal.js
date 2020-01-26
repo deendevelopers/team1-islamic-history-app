@@ -15,7 +15,7 @@ function EventModal(props) {
       <Modal {...props}>
         <SingleHistoricEventHeader text={event.date} key={1}/>
         <SingleHistoricEventText text={event.description} key={2}/>
-        <SingleHistoricEventFooter text={'-- ' + event.subject + ' --'}
+        <SingleHistoricEventFooter text={'– ' + event.subject}
                                    key={3}/>
       </Modal>
   )

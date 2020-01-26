@@ -10,6 +10,7 @@ const ModalView = styled(FlexRowFullScreenView)`
 width: 100%;
 height: 100%;
 position: absolute;
+max-width: 80vw;
 //opacity: 0.5;
 //background-color: gray;
 z-index: 100;
@@ -22,6 +23,7 @@ border-color: ${FACT_BORDER_COLOR};
 border-width: 2px;
 border-style: solid;
 opacity: 1;
+padding: 10px;
 `;
 
 function Modal(props) {

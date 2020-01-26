@@ -1,25 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import {FlexColumnFullWidthView} from '../views/FlexView';
-import {FACT_COLOR} from '../../constants/styles';
+import { FlexColumnFullWidthView } from '../views/FlexView';
+import { FACT_COLOR } from '../../constants/styles';
 
 const Header = styled.div`
-  font-size: medium;
-  font-weight: bold;
-  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  text-align: left;
+  width: 95%;
   color: ${FACT_COLOR};
-  font-style: italic;
 `;
 
 function SingleHistoricEventText(props) {
-  const {text} = {...props};
+  const { text } = { ...props };
 
   return (
-      <FlexColumnFullWidthView>
-        <Header>
-          {text}
-        </Header>
-      </FlexColumnFullWidthView>
+    <FlexColumnFullWidthView>
+      <Header>{text}</Header>
+    </FlexColumnFullWidthView>
   );
 }
 
