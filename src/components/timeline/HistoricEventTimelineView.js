@@ -25,7 +25,7 @@ function HistoricEventTimelineView(props) {
         {selectedEvent && <EventModal event={selectedEvent} onExit={onModalExit}/>}
         <ScrollableView y={true} flexDirection={"row"}>
           <HistoricEventTimelinePoints events={events} onEventClick={onEventPointClicked}/>
-          <HistoricEventTimelineDetails events={events}/>
+          {/* <HistoricEventTimelineDetails events={events}/> */}
         </ScrollableView>
       </FlexRowFullScreenView>
   );

@@ -17,7 +17,8 @@ function HistoricEventTimelinePoints(props) {
   return (
       <View>
         { timeline }
-        <TimelineLine fill/>
+        {/* Fills in the rest of the space after the last Event */}
+        {/* <TimelineLine fill/> */}
       </View>
   )
 }
