@@ -18,5 +18,11 @@ export const navigateToTimelineEvents = () => ({
 
 export const navigateToLikedEvents = () => ({
   type: type.NAVIGATE_TO_LIKED_EVENTS,
-  page: view.LIKED_HISTORIC_EVENTS_VIEW,
+  page: view.LOVED_HISTORIC_EVENTS_VIEW,
+});
+
+
+export const navigateToSettings = () => ({
+  type: type.NAVIGATE_TO_SETTINGS,
+  page: view.SETTINGS_VIEW,
 });

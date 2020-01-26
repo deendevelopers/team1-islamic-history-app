@@ -1,18 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
-import NavbarContainer from './navbar/NavbarContainer';
 import FlexView from '../components/views/FlexView';
 import historicEventsService from '../services/HistoricEventsService';
-import SingleHistoricEventText
-  from '../components/singlehistoricevent/SingleHistoricEventText';
-import SingleHistoricEventHeader
-  from '../components/singlehistoricevent/SingleHistoricEventHeader';
-import RcQueueAnim from 'rc-queue-anim';
-import SingleHistoricEventScrollIndicator
-  from '../components/singlehistoricevent/SingleHistoricEventScrollIndicator';
+import lovesService from '../services/LovesService';
 import SingleHistoricEventQuoteView
   from '../components/singlehistoricevent/SingleHistoricEventQuoteView';
-import ScrollableView from '../components/views/ScrollableView';
 import {connect} from 'react-redux';
 import {navigateToSingleHistoricEventDetail} from '../store/navigation/actions';
 
@@ -24,30 +16,55 @@ align-items: center;
 `;
 
 function SingleHistoricEventViewContainer(props) {
-  const {navigateToSingleHistoricEventDetail} = {...props};
+  const {user, navigateToSingleHistoricEventDetail} = {...props};
   const [event, setEvent] = useState('');
+  const [isLiked, setIsLiked] = useState('');
 
   useEffect(() => {
-    historicEventsService.getOne(Math.round(Math.random() * 10))
-        .then(data => setEvent(data));
+    fetchEvent();
   }, []);
+
+  function fetchEvent() {
+    console.log("fetch event");
+    historicEventsService.getOne(Math.round(Math.random() * 10))
+        .then(data => {
+          setEvent(data);
+          lovesService.getLovesByUserIdAndEventId(user.user.id, data.id)
+              .then(loveData => {
+                console.log("loves service", loveData);
+                setIsLiked(loveData.length > 0);
+              })
+        });
+  }
 
   function goToDetails() {
     navigateToSingleHistoricEventDetail();
   }
 
+  function onLikeClick() {
+    console.log("like clicked");
+    lovesService.postLove(event.id, user.user.id).then(r => console.log(r));
+    // updateUserLoves(user, event_id);
+  }
+
   return (
       <FlexView flexDirection={'column'} height={'100%'}>
-        <SingleHistoricEventQuoteView event={event} onNextClick={goToDetails}/>
+        <SingleHistoricEventQuoteView
+            event={event}
+            isLiked={isLiked}
+            onNextClick={goToDetails}
+            onLikeClick={onLikeClick}
+        />
       </FlexView>
   );
 }
 
 const mapStateToProps = (state) => ({
+  user: state.user
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  navigateToSingleHistoricEventDetail: () => dispatch(navigateToSingleHistoricEventDetail())
+  navigateToSingleHistoricEventDetail: () => dispatch(navigateToSingleHistoricEventDetail()),
 });
 
 

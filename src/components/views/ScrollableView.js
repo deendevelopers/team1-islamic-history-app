@@ -2,8 +2,8 @@ import styled from "styled-components";
 import PropTypes from 'prop-types';
 
 const ScrollableView = styled.div`
-  overflow-y: ${props => props.x ? "scroll" : "hidden"};
-  overflow-x: ${props => props.y ? "scroll" : "hidden"};
+  overflow-y: ${props => props.y ? "scroll" : "hidden"};
+  overflow-x: ${props => props.x ? "scroll" : "hidden"};
   display: flex;
   flex-direction: ${props => props.flexDirection};
   height: 100%;

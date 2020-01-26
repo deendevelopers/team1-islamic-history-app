@@ -1,14 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import RcQueueAnim from 'rc-queue-anim';
 import SingleHistoricEventHeader from './SingleHistoricEventHeader';
 import SingleHistoricEventText from './SingleHistoricEventText';
-import SingleHistoricEventScrollIndicator
-  from './SingleHistoricEventScrollIndicator';
 import SingleHistoricEventFooter from './SingleHistoricEventFooter';
 import SingleHistoricEventLikeButton from './SingleHistoricEventLikeButton';
 import PropTypes from 'prop-types';
-import SingleHistoricEvent from './SingleHistoricEvent';
 
 const FactViewWrapper = styled.div`
 display: flex;
@@ -28,26 +24,33 @@ align-items: center;
 `;
 FactViewInnerWrapper.displayName = 'FactViewInnerWrapper';
 
-function SingleHistoricEventQuoteView(props) {
-  const {event, isLiked, onNextClick, onLikeClick} = {...props};
+const Buttons = styled.div`
+padding-top: 5px;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+`;
+
+function SingleHistoricEvent(props) {
+  const {event, isLiked, onLikeClick} = {...props};
 
   return (
-      <FactViewWrapper>
-        <FactViewInnerWrapper>
-          <RcQueueAnim delay={700}>
-            <SingleHistoricEvent event={event} isLiked={isLiked} onLikeClick={onLikeClick}/>
-          </RcQueueAnim>
-        </FactViewInnerWrapper>
-        <SingleHistoricEventScrollIndicator onClick={onNextClick}/>
-      </FactViewWrapper>
+          <React.Fragment>
+              <SingleHistoricEventHeader text={event.date} key={1}/>
+              <SingleHistoricEventText text={event.description} key={2}/>
+              <SingleHistoricEventFooter text={'-- ' + event.subject + ' --'} key={3}/>
+              <Buttons>
+              <SingleHistoricEventLikeButton isLiked={isLiked} onClick={onLikeClick}/>
+              </Buttons>
+          </React.Fragment>
 );
 }
 
-SingleHistoricEventQuoteView.propTypes = {
+SingleHistoricEvent.propTypes = {
   event: PropTypes.object,
   isLiked: PropTypes.bool,
-  onNextClick: PropTypes.func,
   onLikeClick: PropTypes.func,
 };
 
-export default SingleHistoricEventQuoteView;
+export default SingleHistoricEvent;
